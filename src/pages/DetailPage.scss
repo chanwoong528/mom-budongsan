@@ -1,0 +1,32 @@
+.detail-page-main {
+  table {
+    width: 100%;
+    border: 1px solid #111;
+    border-collapse: collapse;
+    colgroup {
+      col {
+        width: calc(100% / 7);
+
+        &.half-col {
+          width: calc(100% / 14);
+        }
+      }
+    }
+    th,
+    td {
+      border: 1px solid #111;
+    }
+  }
+  .heaer-table {
+    margin: 30px 0;
+  }
+  .building-table {
+    margin: 30px 0;
+  }
+  .rent-table {
+    margin: 30px 0;
+    .tr-total {
+      border: 10px solid red;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 //@ts-nocheck
-import { useEffect, useContext } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect, useContext, useState } from "react";
+import { BrowserRouter, Routes, Route, useFetcher } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 
@@ -14,13 +14,22 @@ import { fetchGetBuildingList } from "./apis/apiGoogleSheet";
 
 const Router = () => {
   const { globalDispatch } = useContext(GlobalContext);
+  const [didMount, setDidMount] = useState(false)
 
   useEffect(() => {
-    fetchGetBuildingList().then((propertyList) => {
-      globalDispatch({ type: GET_BUILDING_LIST, payload: { propertyList } })
-    });
-
+    setDidMount(true)
+    return () => {
+      setDidMount(false)
+    }
   }, [])
+  useEffect(() => {
+    if (didMount) {
+      fetchGetBuildingList().then((propertyList) => {
+        globalDispatch({ type: GET_BUILDING_LIST, payload: { propertyList } })
+      });
+    }
+
+  }, [didMount])
 
   return (
     <>

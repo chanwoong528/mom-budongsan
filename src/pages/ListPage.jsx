@@ -6,7 +6,7 @@ const ListPage = () => {
   const { propertyList } = useContext(GlobalContext);
 
   return (
-    <div>
+    <main>
       ListPage
       {propertyList.length > 0 && (
         <ul>
@@ -15,7 +15,7 @@ const ListPage = () => {
           })}
         </ul>
       )}
-    </div>
+    </main>
   );
 };
 

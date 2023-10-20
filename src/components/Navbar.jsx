@@ -1,14 +1,12 @@
 import React from "react";
+import "./Navbar.scss";
 
 const Navbar = () => {
   return (
     <nav>
       <ul>
         <li>
-          <a href="/">list</a>
-        </li>
-        <li>
-          <a href="/detail">detail</a>
+          <a href="/">매물 리스트</a>
         </li>
       </ul>
     </nav>

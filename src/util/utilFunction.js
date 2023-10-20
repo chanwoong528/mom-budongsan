@@ -25,3 +25,7 @@ export function formatNumberToKorean(number) {
 
   return number.toString();
 }
+
+export function isNumeric(str) {
+  return /^\d+$/.test(str);
+}

@@ -2,7 +2,7 @@ import React from "react";
 
 import { formatNumberToKorean } from "../../util/utilFunction";
 
-import { LIST_VIEW_COLUMNS } from "../../util/CONSTANT.JS";
+import { LIST_VIEW_COLUMNS } from "../../util/CONSTANT.js";
 
 const BuildingItem = ({ buildingItem }) => {
   const renderValue = (col, item) => {
