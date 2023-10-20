@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { formatNumberToKorean } from "../../util/utilFunction";
 
-import { LIST_VIEW_COLUMNS } from "../../util/CONSTANT.js";
+import { LIST_VIEW_COLUMNS } from "../../util/constants";
 
 const BuildingItem = ({ buildingItem }) => {
   const renderValue = (col, item) => {
@@ -18,7 +19,7 @@ const BuildingItem = ({ buildingItem }) => {
 
   return (
     <li key={buildingItem.명칭}>
-      <a href={`/detail?name=${buildingItem.명칭}`}>
+      <Link to={`/detail?name=${buildingItem.명칭}`}>
         <section>
           {LIST_VIEW_COLUMNS.map((col, idx) => {
             return col.type === "h3" ? (
@@ -30,7 +31,7 @@ const BuildingItem = ({ buildingItem }) => {
             );
           })}
         </section>
-      </a>
+      </Link>
     </li>
   );
 };

@@ -1,6 +1,6 @@
 //@ts-nocheck
 import { useEffect, useContext, useState } from "react";
-import { BrowserRouter, Routes, Route, useFetcher } from "react-router-dom";
+import { HashRouter, Routes, Route, useFetcher } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 
@@ -33,14 +33,15 @@ const Router = () => {
 
   return (
     <>
-      <Navbar />
-      <BrowserRouter>
+
+      <HashRouter>
+        <Navbar />
         <Routes>
-          <Route path="/" element={<ListPage />} />
-          <Route path="/detail" element={<DetailPage />} />
           <Route path="*" element={<NotFoundPage />} />
+          <Route path="/detail" element={<DetailPage />} />
+          <Route path="/" element={<ListPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 };
