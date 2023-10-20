@@ -30,7 +30,9 @@ const DetailPage = () => {
 
   return (
     <main>
-      <button onClick={handlePrint}>print </button>
+      <button className="btn-print" onClick={handlePrint}>
+        프린트
+      </button>
       <div className="detail-page-main" ref={printRef}>
         <table className="heaer-table">
           <tbody>
